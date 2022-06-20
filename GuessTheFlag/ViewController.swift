@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         gameTitle.text = "Guess The Flag"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(restartGame))
         
         allFlags += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         firstFlag.layer.borderWidth = 1
@@ -58,12 +59,22 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func restartGame() {
+        let alertController = UIAlertController(title: "Do you want to restart your game? :)", message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Yes", style: .default) {action in
+            self.questionsAsked = 0
+            self.currentScore = 0
+            self.askQuestion()
+        })
+        present(alertController, animated: true)
+    }
+    
     func askQuestion(action: UIAlertAction! = nil) {
         allFlags.shuffle()
-        firstFlag.setImage(UIImage(named: allFlags[0]), for: .normal)
-        secondFlag.setImage(UIImage(named: allFlags[1]), for: .normal)
-        thirdFlag.setImage(UIImage(named: allFlags[2]), for: .normal)
-        
+        UIView.transition(with: firstFlag, duration: 0.5, options: .transitionCrossDissolve, animations: {self.firstFlag.setImage(UIImage(named: self.allFlags[0]), for: .normal)}, completion: nil)
+        UIView.transition(with: secondFlag, duration: 0.5, options: .transitionCrossDissolve, animations: {self.secondFlag.setImage(UIImage(named: self.allFlags[1]), for: .normal)}, completion: nil)
+        UIView.transition(with: thirdFlag, duration: 0.5, options: .transitionCrossDissolve, animations: {self.thirdFlag.setImage(UIImage(named: self.allFlags[2]), for: .normal)}, completion: nil)
         correctAnswer = Int.random(in: 0...2)
         
         questionMessage.text = "Which flag is for \(allFlags[correctAnswer].uppercased())?"
