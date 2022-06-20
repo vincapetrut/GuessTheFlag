@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         
         gameTitle.text = "Guess The Flag"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(restartGame))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareScore))
         
         allFlags += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         firstFlag.layer.borderWidth = 1
@@ -68,6 +69,12 @@ class ViewController: UIViewController {
             self.askQuestion()
         })
         present(alertController, animated: true)
+    }
+    
+    @objc func shareScore() {
+        let activityController = UIActivityViewController(activityItems: ["Your correct score is \(currentScore)p"], applicationActivities: [])
+        activityController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(activityController, animated: true)
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
