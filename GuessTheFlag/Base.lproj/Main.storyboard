@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rwc-TN-XEt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="63m-Td-QZi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rwc-TN-XEt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LZz-uk-0lB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IN4-vT-vP1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ja2-5O-Crs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="95.758928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZJ-gl-ksQ">
+                                <rect key="frame" x="95" y="248" width="224" height="114"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="us" imagePadding="1"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gtG-z9-nvj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swO-QF-XPO">
+                                <rect key="frame" x="95" y="392" width="224" height="114"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hbf-E1-7Ch"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-uy-n4a">
+                                <rect key="frame" x="95" y="536" width="224" height="114"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zxl-Bt-2AS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v8-dT-ciA">
+                                <rect key="frame" x="120" y="139" width="174" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLB-qO-h92">
+                                <rect key="frame" x="167.5" y="724" width="79" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hlP-uy-n4a" firstAttribute="height" secondItem="swO-QF-XPO" secondAttribute="height" id="8rp-IH-zG0"/>
+                            <constraint firstItem="6v8-dT-ciA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Aap-A5-imU"/>
+                            <constraint firstItem="eLB-qO-h92" firstAttribute="top" secondItem="hlP-uy-n4a" secondAttribute="bottom" constant="74" id="Apc-eC-zj1"/>
+                            <constraint firstItem="2ZJ-gl-ksQ" firstAttribute="centerX" secondItem="6v8-dT-ciA" secondAttribute="centerX" id="E09-eb-dci"/>
+                            <constraint firstItem="swO-QF-XPO" firstAttribute="height" secondItem="2ZJ-gl-ksQ" secondAttribute="height" id="K0Y-n1-OIH"/>
+                            <constraint firstItem="swO-QF-XPO" firstAttribute="centerX" secondItem="2ZJ-gl-ksQ" secondAttribute="centerX" id="KGu-lk-dNT"/>
+                            <constraint firstItem="hlP-uy-n4a" firstAttribute="centerX" secondItem="swO-QF-XPO" secondAttribute="centerX" id="KOo-Nq-jMh"/>
+                            <constraint firstItem="swO-QF-XPO" firstAttribute="top" secondItem="2ZJ-gl-ksQ" secondAttribute="bottom" constant="30" id="Yf2-kD-pot"/>
+                            <constraint firstItem="hlP-uy-n4a" firstAttribute="top" secondItem="swO-QF-XPO" secondAttribute="bottom" constant="30" id="dz1-5J-LX2"/>
+                            <constraint firstItem="6v8-dT-ciA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="eE3-De-kiJ"/>
+                            <constraint firstItem="eLB-qO-h92" firstAttribute="centerX" secondItem="hlP-uy-n4a" secondAttribute="centerX" id="gPT-Ig-FlQ"/>
+                            <constraint firstItem="2ZJ-gl-ksQ" firstAttribute="top" secondItem="6v8-dT-ciA" secondAttribute="bottom" constant="67" id="uA9-QF-O8y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xFv-bJ-x34"/>
+                    <connections>
+                        <outlet property="firstFlag" destination="2ZJ-gl-ksQ" id="mR9-lq-Dqv"/>
+                        <outlet property="gameTitle" destination="6v8-dT-ciA" id="ioq-pF-elC"/>
+                        <outlet property="questionMessage" destination="eLB-qO-h92" id="FtG-Qa-hBj"/>
+                        <outlet property="secondFlag" destination="swO-QF-XPO" id="8Rl-e8-yHw"/>
+                        <outlet property="thirdFlag" destination="hlP-uy-n4a" id="4JL-bW-gzY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952.1739130434785" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="us" width="200" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
